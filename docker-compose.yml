@@ -1,0 +1,26 @@
+version: "3.8"
+services:
+
+  jupyter:
+    container_name: jupyter
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - JUPYTER_IMAGE
+    restart: always
+    volumes:
+      - ./notebooks:/home/jovyan/notebooks
+      - ./src:/home/jovyan/src
+      - ./data:/home/jovyan/data
+      - ./reports:/home/jovyan/reports
+    ports:
+      - 8888:8888
+      - 4040:4040
+    networks:
+      - ok200-curve
+
+networks:
+  ok200-curve:
+    name: ok200-curve
+    driver: bridge
