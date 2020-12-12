@@ -1,11 +1,11 @@
-# https://github.com/jupyter/docker-stacks/blob/master/docs/using/recipes.md#using-pip-install-or-conda-install-in-a-child-docker-image
 ARG JUPYTER_IMAGE
 FROM $JUPYTER_IMAGE
 
 # install external dependencies
 RUN mkdir src
 COPY --chown=jovyan:users ./src/requirements.txt ./src
-RUN pip install --requirement ./src/requirements.txt && \
+# https://github.com/jupyter/docker-stacks/blob/master/docs/using/recipes.md#using-pip-install-or-conda-install-in-a-child-docker-image
+RUN pip install --user --requirement ./src/requirements.txt && \
     fix-permissions $CONDA_DIR && \
     fix-permissions /home/$NB_USER
 

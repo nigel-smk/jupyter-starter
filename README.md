@@ -1,5 +1,9 @@
+## Using GitHub to make a new repository based on this template
+- go to the [GitHub page for this project](https://github.com/nigel-smk/jupyter-starter)
+- click `Use this template`
+
 ## Configuration
-1. choose the jupyter docker image that you want to use [from here](https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html)
+1. choose the jupyter docker image that you want to use [from the jupyter docs](https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html)
 2. paste the selected image name into the `build.env` config file
     - e.g. `JUPYTER_IMAGE=jupyter/scipy-notebook`
 
@@ -8,6 +12,7 @@
 2. from the root of the project run
     - `make jupyter-start`
 3. cmd + click the jupyter URL in the terminal
+4. Start using jupyter! (optionally read on about some additional features)
 
 ## Writing `lib` code
 - sometimes there is code that makes more sense to write with the support of an IDE
@@ -35,11 +40,14 @@
   - to list only the additional packages in the requirements.txt
 
 ## Contributing
-- feel free to just submit a PR!
-- otherwise, write up a GitHub Issue if you have a feature/improvement suggestion
-- or have a look at the existing issues to see where help is needed
+Please feel free to...
+- write up a GitHub Issue if you have a feature/improvement suggestion
+- have a look at the existing issues to see where help is needed
+- submit a PR for anything
 
+---
 
+## Sources
 
 https://godatadriven.com/blog/write-less-terrible-code-with-jupyter-notebook/
 https://u.group/thinking/how-to-put-jupyter-notebooks-in-a-dockerfile/
@@ -52,13 +60,5 @@ https://www.pythonlikeyoumeanit.com/Module5_OddsAndEnds/Modules_and_Packages.htm
 Auto-import lib before notebook?
 https://towardsdatascience.com/how-to-automatically-import-your-favorite-libraries-into-ipython-or-a-jupyter-notebook-9c69d89aa343
 
-Betterunderstand importin from packages:
+Better understand importing from packages:
 https://stackoverflow.com/questions/35727134/module-imports-and-init-py-in-python
-
-## Usage
-- enter this in the first cell of your notebook to have changes made in lib autoloaded by the notebook
-  - without this you will need to restart the kernel for your code changes to be recognized
-  ```
-  %load_ext autoreload
-  %autoreload 2
-  ```
