@@ -4,6 +4,7 @@
 
 ## Configuration
 1. choose the jupyter docker image that you want to use [from the jupyter docs](https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html)
+    - note that each image has a selection of tags if you want to run specific jupyter versions, e.g. https://hub.docker.com/r/jupyter/base-notebook/tags
 2. paste the selected image name into the `build.env` config file
     - e.g. `JUPYTER_IMAGE=jupyter/scipy-notebook`
 3. uncomment the `JUPYTER_ENABLE_LAB` variable in `jupyter.env` if you want to run [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/getting_started/overview.html) instead of a classic Jupyter Notebook
