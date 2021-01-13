@@ -1,6 +1,5 @@
 version: "3.8"
 services:
-
   jupyter:
     container_name: jupyter
     build:
@@ -9,6 +8,8 @@ services:
       args:
         - JUPYTER_IMAGE
     restart: always
+    env_file:
+      - ./jupyter.env
     volumes:
       - ./notebooks:/home/jovyan/notebooks
       - ./src:/home/jovyan/src
@@ -18,9 +19,9 @@ services:
       - 8888:8888
       - 4040:4040
     networks:
-      - ok200-curve
+      - jupyter-starter
 
 networks:
-  ok200-curve:
-    name: ok200-curve
+  jupyter-starter:
+    name: jupyter-starter
     driver: bridge
